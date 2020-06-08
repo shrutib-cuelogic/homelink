@@ -31,6 +31,9 @@ button{
 
 header{
     .top-section{
+        @media (max-width:991px) {
+            padding-top: 20px;
+        }
         .circle-i {
             width: 25px;
             height: 24px;
@@ -39,10 +42,12 @@ header{
             font-size: 11px;
         }
         img{
-            position: relative;
-            top: 20px;
             width: 210px;
-            margin-right: 13px;
+            @media (min-width:991px) {
+                position: relative;
+                top: 20px;
+                margin-right: 13px;
+            }
         }
         button{
             background: @tertiarycolor;
@@ -58,14 +63,51 @@ header{
         }
     }
     .bottom-section{
-        background: url('/images/header-bg.png') no-repeat bottom;
+        @media (min-width:991px) {
+            background: url('/images/header-bg.png') no-repeat bottom;
+            height: 53px;
+        }
         nav{
             a{
                 color: @white;
+                @media (max-width:992px) {
+                    color: @black;
+                }
             }
             .dropdown-menu{
                 a{
                     color: #000;
+                }
+                @media (max-width:991px) {
+                    border: 1px solid @tertiarycolor;
+                    margin-bottom: 20px;
+                }
+            }
+            ul{
+                @media (min-width:991px) {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 35%;
+                }
+                li{
+                    @media (max-width:991px) {
+                        border-bottom: 2px solid @tertiarycolor;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .navbar-toggler{
+                cursor: pointer;
+                width: 36px;
+                height: 36px;
+                background-color: @tertiarycolor;
+                padding: 10px 7px;
+                span{
+                    height: 2px;
+                    width: 20px;
+                    display: block;
+                    background-color: @white;
+                    margin-bottom: 4px;
                 }
             }
         }
@@ -225,7 +267,9 @@ section{
         }
     }
     &.banner-section{
-        margin-top: -23px;
+        @media (min-width:991px) {
+            margin-top: -23px;  
+        }
         .carousel{
             .carousel-inner{
                 z-index: -1;
@@ -234,6 +278,46 @@ section{
                 li{
                     background-color: @white;
                 }
+            }
+        }
+        .banner-content{
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            color: @white;
+            height: 100%;
+            left: 0;
+            right: 0;
+            .row{
+                height: 100%;
+                align-items: center;
+            }
+            .primary-btn{
+                background: @blue;
+                color: @white;
+                width: 350px;
+            }
+            p{
+                font-size: 54px;
+                text-shadow: 0 3px 3px rgba(14,22,35,.7);
+                margin-bottom: 65px;
+                position: relative;
+                z-index: 10;
+                margin: 0;
+            }
+            .bottom-text{
+                span{
+                    font-size: 26px;
+                    text-shadow: 0 3px 3px #0e1623;
+                }
+            }
+            i{
+                margin: 0 35px;
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                display: inline-block;
+                vertical-align: middle;
             }
         }
     }
